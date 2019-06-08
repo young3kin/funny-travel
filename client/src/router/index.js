@@ -4,6 +4,7 @@ import main from '@/components/main'
 import place from '@/components/place'
 import community from '@/components/community'
 import login from '@/components/login'
+import travelnotes from '@/components/travelnotes'
 import register from '@/components/register'
 import news from '@/components/news'
 import articles from '@/components/articles'
@@ -69,6 +70,11 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: test
+    },
+    {
+      path: '/travelnotes',
+      name: 'travelnotes',
+      component: travelnotes
     }
   ]
 })

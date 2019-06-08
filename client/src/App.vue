@@ -11,6 +11,9 @@
         <li>
           <router-link to="/community">社区+</router-link>
         </li>
+        <li>
+          <router-link to="/travelnotes">游记+</router-link>
+        </li>
       </ul>
       <div>
         <span class="login">
@@ -23,7 +26,9 @@
     </header>
     <router-view></router-view>
     <footer>
-      <p>©寻趣游</p>
+      <div>
+      <img src="../static/images/logo1.png">
+      </div>
     </footer>
   </div>
 </template>
@@ -66,7 +71,7 @@ header ul li a {
 
 header div {
   float: right;
-  padding-right: 150px;
+  padding-right: 65px;
   padding-top: 3px;
 }
 
@@ -86,6 +91,7 @@ header div span {
   border: #ededed solid 1px;
   padding: 4px 0 4px 0;
   border-radius: 3px;
+  margin-left:10px;
 }
 
 header div span a {
@@ -132,5 +138,10 @@ footer {
   text-align: center;
   height: 60px;
   padding-top: 30px;
+}
+footer img{
+  width:130px;
+  height:60px;
+  margin-top:-15px;
 }
 </style>

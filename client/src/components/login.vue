@@ -9,10 +9,10 @@
           <input type="text" class="username" placeholder="输入用户名" v-model="username">
         </div>
         <div class="key">
-          <input type="password" class="password"  placeholder="输入密码" v-model="password">
+          <input type="password" class="password" placeholder="输入密码" v-model="password">
         </div>
         <div>
-          <button  class="login" @click="login">登录</button>
+          <button class="login" @click="login">登录</button>
         </div>
         <div class="container-foot">
           <span id="sp1">没有账号，立即<a class="register1" @click="go">注册</a></span>
@@ -28,28 +28,41 @@
     name: 'login1',
     data() {
       return {
-      username: '',
-      password: '',
+        username: '',
+        password: '',
       }
     },
     methods: {
       login() {
         var _this = this;
-				this.$axios.post("http://localhost:3000/users/user/login",{
-						username:this.username,
-						password:this.password
-				}).then(function(res){ 
-					//成功
-				if (res.data.code == '010') {
-        _this.$alert('登录成功');
-        _this.$router.push({path:'/'})
-					}else{
-					_this.$alert(res.data.message)
-					}	
-				}).catch(function (error) {
-          
-         _this.$alert('加载异常，请稍后重试')
-				});
+        this.$axios.post("http://localhost:3000/users/login", {
+          username: this.username,
+          password: this.password
+        }).then(function (res) {
+          //成功
+          if (res.data.code == '010') {
+            _this.$message({
+              showClose: true,
+              message: '登录成功',
+              type: 'success'
+            });
+            _this.$router.push({
+              path: '/'
+            })
+          } else {
+            _this.$message({
+              showClose: true,
+              message: res.data.message,
+              type: 'error'
+            });
+          }
+        }).catch(function (error) {
+          _this.$message({
+            showClose: true,
+            message: '加载异常，请稍后重试',
+            type: 'error'
+          });
+        });
       },
       go() {
         this.$router.push('/register')
@@ -69,28 +82,32 @@
   }
 
   .main {
-    width:360px;
+    width: 360px;
     margin: 0 auto;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 5px 10px 25px 2px rgba(39, 39, 39, 0.774);
-     animation:tran 2s ease;
+    box-shadow: 15px 30px 25px 0px rgba(44, 43, 43, 0.822);
+    animation: tran 2s ease;
   }
-@keyframes tran{
-	0%{
-		opacity:0;
-		transform:translateY(40%);
-	  }
-	30% {
-		opacity:0;
-		transform:translateY(20%);
-		}
-	100% {
-		opacity:1;
-	    transform:translateX(0);
-		}
-		}
+
+  @keyframes tran {
+    0% {
+      opacity: 0;
+      transform: translateY(40%);
+    }
+
+    30% {
+      opacity: 0;
+      transform: translateY(20%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   .main>div {
     margin: 30px;
   }
@@ -101,7 +118,7 @@
 
   .top {
 
-    border-bottom: 3px solid #339933;
+    border-bottom: 3px solid #dbab61;
     margin-left: -30px;
   }
 
@@ -112,7 +129,7 @@
     display: block;
     font-size: 18px;
     font-weight: bold;
-    color: #339933;
+    color: #dbab61;
   }
 
   input[type="text"] {
@@ -129,6 +146,9 @@
 
   }
 
+  input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px white inset !important;
+  }
 
   .username {
     width: 300px;
@@ -142,7 +162,7 @@
   .login {
     width: 300px;
     height: 40px;
-    background-color: #339933;
+    background-color: #dbab61;
     border: 1px solid #ccc;
     border-radius: 3px;
     color: white;
@@ -151,11 +171,11 @@
   }
 
   .login:hover {
-    background-color:  #0c6fb1e3;
+    background-color: rgb(25, 162, 184);
     cursor: pointer;
   }
 
- 
+
   #sp1 {
     margin-top: 5px;
     float: left;
@@ -163,7 +183,7 @@
   }
 
   #sp1>a {
-    color: #339933
+    color: #dbab61
   }
 
   #sp1>a:hover {
@@ -175,6 +195,5 @@
     margin-left: 55px;
     font-size: 12px;
   }
-
 
 </style>

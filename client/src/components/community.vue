@@ -237,24 +237,24 @@ function showContinent() {
 <style scoped>
 .background {
   position: relative;
-  height: 450px;
+  height: 500px;
   width: 100%;
   overflow: hidden;
 }
 .bg-blur {
   z-index: -1;
-  height: 450px;
+  height: 500px;
   width: 100%;
   filter: blur(10px);
   position: absolute;
   background: url("../../static/images/matebg.jpg");
-  transform: scale(1.1);
+  transform: scale(1.1,1.1);
   background-size: cover;
 }
 
 .bg {
   z-index: -1;
-  height: 450px;
+  height: 500px;
   width: 100%;
   background: url("../../static/images/matebg.jpg") center no-repeat;
   position: absolute;
@@ -274,7 +274,7 @@ function showContinent() {
 }
 
 .time {
-  padding: 15px 0;
+  padding: 20px 0;
 }
 
 .time span:nth-child(2) {
@@ -287,7 +287,7 @@ function showContinent() {
 }
 
 .desn {
-  padding: 15px 0;
+  padding: 20px 0;
 }
 
 .time > :first-child,
@@ -327,6 +327,7 @@ hr {
   position: absolute;
   display: none;
   margin-top: 20px;
+ padding-bottom: 20px;
 }
 
 .continent .iteam {
@@ -423,6 +424,6 @@ button {
   float: right;
   position: relative;
   top: 10px;
-  right: 370px;
+  right: 10%;
 }
 </style>

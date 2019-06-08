@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="block">
-      <el-carousel height="640px">
+      <el-carousel height="570px">
         <el-carousel-item v-for="item in 4" :key="item">
           <h3 class="small"></h3>
         </el-carousel-item>
@@ -121,7 +121,7 @@
             <div class="card2">
               <span></span>
             </div>
-          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -153,10 +153,10 @@ export default {
   background: url("../../static/images/indexbg4.jpg");
 }
 .search {
-  width: 552px;
-  height: 80px;
+  width: 570px;
+  height: 100px;
   position: relative;
-  top: -360px;
+  top: -270px;
   margin: auto;
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.4);
@@ -170,15 +170,16 @@ export default {
   text-decoration: none;
   margin-top: 4px;
   padding: 2px 0 6px 0;
+  font-size: 20px;
   color: white;
   float: left;
 }
 
 .search input {
-  height: 34px;
-  width: 448px;
+  height: 40px;
+  width: 460px;
   float: left;
-  margin: 7px 0 0 8px;
+  margin: 15px 0 0 10px;
   outline: none;
   padding-left: 5px;
   border: none;
@@ -186,9 +187,9 @@ export default {
 }
 
 .search button {
-  height: 34px;
-  width: 80px;
-  margin-top: 7px;
+  height: 40px;
+  width: 85px;
+  margin-top: 15px;
   background: #ec414d;
   border: none;
   outline: none;
@@ -245,10 +246,12 @@ export default {
   margin-left: 24px;
   margin-bottom: 8px;
 }
+
 .article {
   width: 1200px;
   height: 610px;
   /* background: lightblue; */
+
 }
 
 .article a {
@@ -393,93 +396,97 @@ export default {
 
 .card2 {
   height: 250px;
-  width: 292px;
+  width: 280px;
 
   float: left;
   border: 1px solid lightgrey;
 }
 .card2:nth-child(2),
 .card2:nth-child(6) {
-  margin: 0 8px;
+  margin: 0 20px;
+}
+.card2:nth-child(1),
+.card2:nth-child(5) {
+  margin-left:5px;
 }
 .card2:nth-child(3),
 .card2:nth-child(7) {
-  margin-right: 8px;
+  margin-right: 20px;
 }
 .card2:nth-child(-n + 4) {
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 .card2 span {
   display: inline-block;
-  width: 292px;
+  width: 280px;
   height: 95px;
   margin-top: 155px;
   background: white;
 }
 #hot-article .card2:nth-child(1) {
   background: url("../../static/images/card1.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #hot-article .card2:nth-child(2) {
   background: url("../../static/images/card2.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #hot-article .card2:nth-child(3) {
   background: url("../../static/images/card3.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #hot-article .card2:nth-child(4) {
   background: url("../../static/images/card4.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #hot-article .card2:nth-child(5) {
   background: url("../../static/images/card5.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #hot-article .card2:nth-child(6) {
   background: url("../../static/images/card6.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #hot-article .card2:nth-child(7) {
   background: url("../../static/images/card7.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #hot-article .card2:nth-child(8) {
   background: url("../../static/images/card8.jpg");
-  background-size: 292px 165px;
+  background-size: 285px 165px;
 }
 
 #new-article .card2:nth-child(1) {
   background: url("../../static/images/card8.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #new-article .card2:nth-child(2) {
   background: url("../../static/images/card7.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #new-article .card2:nth-child(3) {
   background: url("../../static/images/card6.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #new-article .card2:nth-child(4) {
   background: url("../../static/images/card5.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #new-article .card2:nth-child(5) {
   background: url("../../static/images/card4.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #new-article .card2:nth-child(6) {
   background: url("../../static/images/card3.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #new-article .card2:nth-child(7) {
   background: url("../../static/images/card2.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 #new-article .card2:nth-child(8) {
   background: url("../../static/images/card1.jpg");
-  background-size: 292px 165px;
+  background-size: 280px 165px;
 }
 
 </style>

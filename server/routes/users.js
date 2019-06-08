@@ -17,15 +17,32 @@ router.use((req, res, next) => {
 })
 
 // 用户注册
-router.post("/user/register", (req, res, next) => {
+router.post("/register", (req, res, next) => {
   let username = req.body.username
   let password = req.body.password
   let repassword = req.body.repassword
-
+  regExp=/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{4,8}$/;
   if (username == '' || password == '') {
     responseDate = {
       code: '001',
       message: '用户名或者密码不能为空'
+    }
+    res.json(responseDate)
+    return
+  }
+
+  if (!regExp.test(username)) {
+    responseDate = {
+      code: '005',
+      message: '用户名格式错误'
+    }
+    res.json(responseDate)
+    return
+  }
+  if (!regExp.test(password)) {
+    responseDate = {
+      code: '005',
+      message: '密码格式错误'
     }
     res.json(responseDate)
     return
@@ -64,7 +81,7 @@ router.post("/user/register", (req, res, next) => {
 
 
 // 用户登录
-router.post("/user/login", (req, res, next) => {
+router.post("/login", (req, res, next) => {
   let username = req.body.username
   let password = req.body.password
   if (username == '' || password == '') {
